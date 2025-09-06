@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happiness Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🌌 Happiness Predictor</h1>
+        <p class="subtitle">Adjust the factors below to predict your happiness rank.</p>
+
+        <form method="POST" action="/predict" class="grid-form">
+            <div class="input-card">
+                <label><span>💰</span> Economy (GDP per Capita)</label>
+                <div class="slider-row">
+                    <input type="range" min="0" max="10" step="0.1" name="economy" value="5" oninput="updateValue(this)">
+                    <span class="value">5.0</span>
+                </div>
+            </div>
+
+            <div class="input-card">
+                <label><span>👨‍👩‍👦</span> Family</label>
+                <div class="slider-row">
+                    <input type="range" min="0" max="10" step="0.1" name="family" value="5" oninput="updateValue(this)">
+                    <span class="value">5.0</span>
+                </div>
+            </div>
+
+            <div class="input-card">
+                <label><span>❤️</span> Health (Life Expectancy)</label>
+                <div class="slider-row">
+                    <input type="range" min="0" max="10" step="0.1" name="health" value="5" oninput="updateValue(this)">
+                    <span class="value">5.0</span>
+                </div>
+            </div>
+
+            <div class="input-card">
+                <label><span>🕊️</span> Freedom</label>
+                <div class="slider-row">
+                    <input type="range" min="0" max="10" step="0.1" name="freedom" value="5" oninput="updateValue(this)">
+                    <span class="value">5.0</span>
+                </div>
+            </div>
+
+            <div class="input-card">
+                <label><span>🏛️</span> Trust (Government Corruption)</label>
+                <div class="slider-row">
+                    <input type="range" min="0" max="10" step="0.1" name="trust" value="5" oninput="updateValue(this)">
+                    <span class="value">5.0</span>
+                </div>
+            </div>
+
+            <div class="input-card">
+                <label><span>🎁</span> Generosity</label>
+                <div class="slider-row">
+                    <input type="range" min="0" max="10" step="0.1" name="generosity" value="5" oninput="updateValue(this)">
+                    <span class="value">5.0</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">🎯 Predict Happiness</button>
+        </form>
+    </div>
+</body>
+</html>

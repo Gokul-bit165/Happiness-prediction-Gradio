@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="result-container">
+        <h1>✨ Prediction Result</h1>
+        <p class="subtitle">Here's your predicted happiness rank and level.</p>
+
+        <div class="result-card {{ level_class }}">
+            <h2>Predicted Rank: <span class="rank">{{ rank }}</span></h2>
+            <h3>Happiness Level: <span class="label">{{ label }}</span></h3>
+            <img src="{{ image }}" alt="Happiness Level Image" class="result-img">
+        </div>
+
+        <div class="factors">
+            <h3>Input Factors</h3>
+            <ul>
+                {% for key, val in inputs.items() %}
+                    <li><b>{{ key }}</b>: {{ "%.1f"|format(val) }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <a href="/input" class="btn">🔄 Try Again</a>
+    </div>
+
+    <audio id="happy-sound" src="/static/mixkit-funny-melody-audio-logo-2984.wav"></audio>
+    <audio id="sad-sound" src="/static/mixkit-slow-sad-trombone-fail-472.wav"></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const happinessLabel = "{{ label }}";
+            const happySound = document.getElementById('happy-sound');
+            const sadSound = document.getElementById('sad-sound');
+
+            if (happinessLabel.includes("High")) {
+                happySound.play();
+            } else if (happinessLabel.includes("Low")) {
+                sadSound.play();
+            }
+        });
+    </script>
+</body>
+</html>
