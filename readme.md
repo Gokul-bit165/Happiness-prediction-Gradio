@@ -1,5 +1,9 @@
 # 😃 World Happiness Rank Predictor [🌍 Live Demo](https://huggingface.co/spaces/GokulV/Happiness-prediction-Gradio)
 
+> **Note:** To access the web app, use the following credentials:
+>
+> - **Username:** `gokul`
+> - **Password:** `bitsathy`
 This project is a **Machine Learning Web App** built with **Gradio +
 Flask (multi-page frontend)** that predicts a country's **World
 Happiness Rank** based on socio-economic factors.
